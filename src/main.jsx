@@ -1,24 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
+import React, { lazy, Suspense } from "react";
+import ReactDOM from "react-dom/client";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Pages/Home/Home/Home";
+
+const App = lazy(() => import("./App.jsx"));
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div>
-        <h1>Hello World</h1>
-        <Link to="about">About Us</Link>
-      </div>
-    ),
+    element: <App />,
+    children: [
+      {
+        path: "",
+        element: <Home />,
+      },
+    ],
   },
   {
     path: "about",
@@ -28,6 +26,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <Suspense fallback={<h1>Loading... </h1>}>
+      <RouterProvider router={router} />
+    </Suspense>
   </React.StrictMode>
 );
