@@ -44,7 +44,6 @@ body {
 .coffees-bg {
   display: flex;
   height: 100vh;
-  padding-left: 15rem;
   align-items: center;
   background-size: cover;
   justify-content: center;

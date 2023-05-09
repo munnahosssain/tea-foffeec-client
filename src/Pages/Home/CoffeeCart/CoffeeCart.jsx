@@ -9,6 +9,7 @@ import { Button, Container, Grid } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditSharpIcon from "@mui/icons-material/EditSharp";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+import { Link } from "react-router-dom";
 
 const CoffeeCart = ({ coffee }) => {
   const { _id, name, chef, supplier, taste, category, details, photo } = coffee;
@@ -66,7 +67,9 @@ const CoffeeCart = ({ coffee }) => {
         </CardContent>
         <CardContent sx={{ flex: "1 5 auto" }}>
           <Button startIcon={<RemoveRedEyeIcon />}></Button>
-          <Button startIcon={<EditSharpIcon />}></Button>
+          <Link to={`updateCoffee/${_id}`}>
+            <Button startIcon={<EditSharpIcon />}></Button>
+          </Link>
           <Button
             onClick={() => handleDelete(_id)}
             startIcon={<DeleteIcon />}
