@@ -1,7 +1,7 @@
 import "../../../App.css";
 import React from "react";
-import { Button, Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import { Button, Grid, Typography } from "@mui/material";
 
 const Banner = () => {
   return (

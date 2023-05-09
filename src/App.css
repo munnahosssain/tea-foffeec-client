@@ -35,3 +35,19 @@ body {
     font-size: 1rem;
   }
 }
+
+.addCoffee {
+  text-align: center;
+  margin: 2em 12rem 3em 12rem
+}
+
+.coffees-bg {
+  display: flex;
+  height: 100vh;
+  padding-left: 15rem;
+  align-items: center;
+  background-size: cover;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-image: url('./assets/images/more/1.png');
+}
